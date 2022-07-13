@@ -1,8 +1,8 @@
-import { useFouter } from "next/router";
+import { useRouter } from "next/router";
 import { useEffect } from "react";
 
 export default function Home() {
-    const router = useFouter();
+    const router = useRouter();
     const { id = 0 } = router.query;
 
     useEffect(() => {
@@ -11,7 +11,7 @@ export default function Home() {
         } else {
             console.info("post id" + id);
         }
-    }, []);
+    }, [id]);
 
     return <div>ID : {id}</div>;
 }
